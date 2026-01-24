@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import ReactMarkdown from 'react-markdown'
 import { 
   Bold, 
   Italic, 
@@ -13,7 +14,9 @@ import {
   List, 
   ListOrdered, 
   Quote, 
-  Code 
+  Code,
+  Eye,
+  Edit2
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
@@ -29,6 +32,7 @@ interface MarkdownEditorProps {
 export function MarkdownEditor({ value, onChange, className, placeholder }: MarkdownEditorProps) {
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
   const fileInputRef = React.useRef<HTMLInputElement>(null)
+  const [isPreview, setIsPreview] = React.useState(false)
 
   const insertText = (before: string, after: string = "") => {
     const textarea = textareaRef.current
@@ -99,138 +103,181 @@ export function MarkdownEditor({ value, onChange, className, placeholder }: Mark
 
   return (
     <div className={cn("border border-input rounded-md bg-background", className)}>
-      <div className="flex flex-wrap items-center gap-1 p-2 border-b border-input bg-muted/50">
+      <div className="flex flex-wrap items-center justify-between p-2 border-b border-input bg-muted/50">
+        <div className="flex flex-wrap items-center gap-1">
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("**", "**")}
+            title="Bold"
+            disabled={isPreview}
+          >
+            <Bold className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("*", "*")}
+            title="Italic"
+            disabled={isPreview}
+          >
+            <Italic className="h-4 w-4" />
+          </Button>
+          <div className="w-px h-4 bg-border mx-1" />
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("# ")}
+            title="Heading 1"
+            disabled={isPreview}
+          >
+            <Heading1 className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("## ")}
+            title="Heading 2"
+            disabled={isPreview}
+          >
+            <Heading2 className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("### ")}
+            title="Heading 3"
+            disabled={isPreview}
+          >
+            <Heading3 className="h-4 w-4" />
+          </Button>
+          <div className="w-px h-4 bg-border mx-1" />
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={handleLink}
+            title="Link"
+            disabled={isPreview}
+          >
+            <LinkIcon className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={handleImage}
+            title="Image"
+            disabled={isPreview}
+          >
+            <ImageIcon className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={handleVideo}
+            title="Video Link"
+            disabled={isPreview}
+          >
+            <Video className="h-4 w-4" />
+          </Button>
+          <div className="w-px h-4 bg-border mx-1" />
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("- ")}
+            title="Bullet List"
+            disabled={isPreview}
+          >
+            <List className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("1. ")}
+            title="Ordered List"
+            disabled={isPreview}
+          >
+            <ListOrdered className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("> ")}
+            title="Quote"
+            disabled={isPreview}
+          >
+            <Quote className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+            onClick={() => insertText("```\n", "\n```")}
+            title="Code Block"
+            disabled={isPreview}
+          >
+            <Code className="h-4 w-4" />
+          </Button>
+        </div>
+        
         <Button
           type="button"
-          variant="ghost"
+          variant={isPreview ? "secondary" : "ghost"}
           size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("**", "**")}
-          title="Bold"
+          onClick={() => setIsPreview(!isPreview)}
+          className="ml-2 gap-2"
         >
-          <Bold className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("*", "*")}
-          title="Italic"
-        >
-          <Italic className="h-4 w-4" />
-        </Button>
-        <div className="w-px h-4 bg-border mx-1" />
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("# ")}
-          title="Heading 1"
-        >
-          <Heading1 className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("## ")}
-          title="Heading 2"
-        >
-          <Heading2 className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("### ")}
-          title="Heading 3"
-        >
-          <Heading3 className="h-4 w-4" />
-        </Button>
-        <div className="w-px h-4 bg-border mx-1" />
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={handleLink}
-          title="Link"
-        >
-          <LinkIcon className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={handleImage}
-          title="Image"
-        >
-          <ImageIcon className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={handleVideo}
-          title="Video Link"
-        >
-          <Video className="h-4 w-4" />
-        </Button>
-        <div className="w-px h-4 bg-border mx-1" />
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("- ")}
-          title="Bullet List"
-        >
-          <List className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("1. ")}
-          title="Ordered List"
-        >
-          <ListOrdered className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("> ")}
-          title="Quote"
-        >
-          <Quote className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="h-8 w-8 p-0"
-          onClick={() => insertText("```\n", "\n```")}
-          title="Code Block"
-        >
-          <Code className="h-4 w-4" />
+          {isPreview ? (
+            <>
+              <Edit2 className="h-4 w-4" />
+              Edit
+            </>
+          ) : (
+            <>
+              <Eye className="h-4 w-4" />
+              Preview
+            </>
+          )}
         </Button>
       </div>
-      <Textarea
-        ref={textareaRef}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="min-h-[400px] border-0 rounded-none rounded-b-md focus-visible:ring-0 resize-y font-mono"
-        placeholder={placeholder}
-      />
+      
+      {isPreview ? (
+        <div className="min-h-[400px] p-4 prose prose-invert max-w-none bg-background">
+          <ReactMarkdown>
+            {value}
+          </ReactMarkdown>
+        </div>
+      ) : (
+        <Textarea
+          ref={textareaRef}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="min-h-[400px] border-0 rounded-none rounded-b-md focus-visible:ring-0 resize-y font-mono"
+          placeholder={placeholder}
+        />
+      )}
       <input
         type="file"
         ref={fileInputRef}
