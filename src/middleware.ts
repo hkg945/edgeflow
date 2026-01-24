@@ -9,6 +9,10 @@ const isProtectedRoute = createRouteMatcher(['/:locale/dashboard(.*)']);
 export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) await auth.protect();
   
+  if (req.nextUrl.pathname.startsWith('/api')) {
+    return;
+  }
+
   return intlMiddleware(req);
 });
 

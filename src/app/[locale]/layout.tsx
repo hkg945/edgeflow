@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { LiveChat } from "@/components/layout/LiveChat";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -43,6 +44,7 @@ export default async function RootLayout({
         <body className={inter.className}>
           <NextIntlClientProvider messages={messages}>
             {children}
+            <LiveChat />
           </NextIntlClientProvider>
         </body>
       </html>

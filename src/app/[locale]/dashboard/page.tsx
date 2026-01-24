@@ -2,7 +2,7 @@ import { currentUser } from "@clerk/nextjs/server"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Button } from "@/components/ui/button"
-import { Lock, Zap, CreditCard, LayoutDashboard, CheckCircle2, TrendingUp, AlertCircle } from "lucide-react"
+import { Lock, Zap, CreditCard, LayoutDashboard, CheckCircle2, TrendingUp, AlertCircle, MessageCircle } from "lucide-react"
 import Link from "next/link"
 import { TradingViewAccountDialog } from "@/components/dashboard/TradingViewAccountDialog"
 import { getTranslations } from "next-intl/server"
@@ -186,13 +186,22 @@ export default async function DashboardPage() {
                 <h2 className="text-xl font-bold text-white">Admin Tools</h2>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Manage your blog posts and content.
+                Manage your blog posts and customer support.
               </p>
-              <Link href="/dashboard/blog">
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Manage Blog
-                </Button>
-              </Link>
+              <div className="space-y-3">
+                <Link href="/dashboard/blog" className="block">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 justify-start">
+                    <LayoutDashboard className="w-4 h-4 mr-2" />
+                    Manage Blog
+                  </Button>
+                </Link>
+                <Link href="/dashboard/chat" className="block">
+                  <Button className="w-full bg-purple-600 hover:bg-purple-700 justify-start">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Live Chat Support
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
 

@@ -1,0 +1,26 @@
+import { NextResponse } from 'next/server'
+import { addMessage } from '@/lib/chat'
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json()
+    const { sessionId, content, userName } = body
+
+    if (!sessionId || !content) {
+      return NextResponse.json(
+        { error: 'Session ID and content are required' },
+        { status: 400 }
+      )
+    }
+
+    const conversation = addMessage(sessionId, content, 'user', userName)
+
+    return NextResponse.json(conversation)
+  } catch (error) {
+    console.error('Error sending message:', error)
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    )
+  }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "2859ea2a-2066-4121-8d21-4564e79b5c01",
+    "userName": "Andy Huang",
+    "messages": [
+      {
+        "id": "821b0ef8-0ff5-4004-bdad-8293b5a2d9f3",
+        "role": "user",
+        "content": "test",
+        "timestamp": 1769262707493
+      },
+      {
+        "id": "27e1a8f5-4e7b-49d1-bb3c-7d6879398b07",
+        "role": "admin",
+        "content": "123",
+        "timestamp": 1769262721196
+      },
+      {
+        "id": "454cd05e-e9e4-4e54-863d-f26b542297c2",
+        "role": "user",
+        "content": "888",
+        "timestamp": 1769264114999
+      },
+      {
+        "id": "7cc34735-79ec-4a69-a8da-1b056540cbe0",
+        "role": "user",
+        "content": "678",
+        "timestamp": 1769264657259
+      },
+      {
+        "id": "5e166682-25ff-49ae-a8ee-40b1dd43f03e",
+        "role": "admin",
+        "content": "我覺得",
+        "timestamp": 1769264668718
+      },
+      {
+        "id": "75ed4aec-1b98-4042-bbef-5e28b4b86876",
+        "role": "admin",
+        "content": "這是可以被解決的。",
+        "timestamp": 1769265617134
+      },
+      {
+        "id": "de5e6715-628c-451b-a719-25ec1902adc2",
+        "role": "user",
+        "content": "Hello from Test User",
+        "timestamp": 1769267747790
+      },
+      {
+        "id": "0c979deb-6bd5-4c91-9bd7-746156674ae0",
+        "role": "user",
+        "content": "Hi",
+        "timestamp": 1769267855623
+      },
+      {
+        "id": "71d97742-049a-4140-8912-5d855006b617",
+        "role": "admin",
+        "content": "1",
+        "timestamp": 1769268222538
+      }
+    ],
+    "lastMessageAt": 1769268222538,
+    "unreadCount": 0,
+    "status": "active"
+  }
+]

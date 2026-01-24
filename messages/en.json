@@ -276,5 +276,13 @@
       "title": "Disclaimer",
       "content": "High Risk Investment Warning:\n\nCFDs and Forex trading carry high risks and may not be suitable for all investors. You may lose some or all of your invested capital.\n\n1. Not Investment Advice\nAll signals, indicators, and analysis provided by EdgeFlow are for educational and informational purposes only and do not constitute investment advice.\n\n2. Performance Disclaimer\nPast performance is not indicative of future results. Simulated trading results may differ from actual trading results.\n\n3. Limitation of Liability\nEdgeFlow is not responsible for any losses or damages resulting from the use of information on this platform."
     }
+  },
+  "LiveChat": {
+    "title": "Support",
+    "welcome": "Hi there! How can we help you today?",
+    "placeholder": "Type your message...",
+    "send": "Send",
+    "reply": "Thanks for reaching out! Our team is currently offline. Please join our Discord community for faster response.",
+    "discord": "Join Discord"
   }
 }
