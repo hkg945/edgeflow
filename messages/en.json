@@ -3,10 +3,17 @@
     "features": "Features",
     "pricing": "Pricing",
     "dashboard": "Dashboard",
+    "blog": "Blog",
     "login": "Login",
     "indicators": "Indicators",
     "freeTrial": "Free Trial",
     "discord": "Join Discord"
+  },
+  "Blog": {
+    "title": "Latest Insights",
+    "subtitle": "Expert analysis, trading strategies, and market updates",
+    "readMore": "Read Article",
+    "publishedOn": "Published on"
   },
   "Indicators": {
     "title": "Explore Our Indicators",

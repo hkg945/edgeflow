@@ -3,10 +3,17 @@
     "features": "功能特色",
     "pricing": "订阅方案",
     "dashboard": "仪表板",
+    "blog": "博客",
     "login": "登录",
     "indicators": "指标策略",
     "freeTrial": "免费试用",
     "discord": "加入 Discord"
+  },
+  "Blog": {
+    "title": "最新洞察",
+    "subtitle": "专家分析、交易策略与市场更新",
+    "readMore": "阅读文章",
+    "publishedOn": "发布于"
   },
   "Indicators": {
     "title": "探索我们的指标策略",

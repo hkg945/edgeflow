@@ -26,6 +26,9 @@ export function Navbar() {
           <Link href="/indicators" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             {t("indicators")}
           </Link>
+          <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            {t("blog")}
+          </Link>
           <Link href="/#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             {t("features")}
           </Link>
@@ -86,6 +89,7 @@ export function Navbar() {
           className="md:hidden border-b border-white/10 bg-background px-4 py-4 flex flex-col gap-4 absolute w-full"
         >
           <Link href="/indicators" className="text-sm font-medium py-2" onClick={() => setIsOpen(false)}>{t("indicators")}</Link>
+          <Link href="/blog" className="text-sm font-medium py-2" onClick={() => setIsOpen(false)}>{t("blog")}</Link>
           <Link href="/#features" className="text-sm font-medium py-2" onClick={() => setIsOpen(false)}>{t("features")}</Link>
           <Link href="/#pricing" className="text-sm font-medium py-2" onClick={() => setIsOpen(false)}>{t("pricing")}</Link>
           

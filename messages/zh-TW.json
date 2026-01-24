@@ -3,10 +3,17 @@
     "features": "功能特色",
     "pricing": "訂閱方案",
     "dashboard": "儀表板",
+    "blog": "部落格",
     "login": "登入",
     "indicators": "指標策略",
     "freeTrial": "免費試用",
     "discord": "加入 Discord"
+  },
+  "Blog": {
+    "title": "最新洞察",
+    "subtitle": "專家分析、交易策略與市場更新",
+    "readMore": "閱讀文章",
+    "publishedOn": "發布於"
   },
   "Indicators": {
     "title": "探索我們的指標策略",
