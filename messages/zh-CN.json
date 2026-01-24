@@ -1,0 +1,130 @@
+{
+  "Navbar": {
+    "features": "功能特色",
+    "pricing": "订阅方案",
+    "dashboard": "仪表板",
+    "login": "登录",
+    "freeTrial": "免费试用",
+    "discord": "加入 Discord"
+  },
+  "LocaleSwitcher": {
+    "label": "切换语言",
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "zh-CN": "简体中文"
+  },
+  "Home": {
+    "Hero": {
+      "badge": "V2.0 算法核心现已上线",
+      "title": "掌握市场波动，\n<gradient>精准交易每一刻</gradient>",
+      "description": "EdgeFlow 提供专业级的 CFD 技术指标与 AI 辅助信号，帮助您在充满不确定性的市场中找到获利机会。",
+      "ctaStart": "立即开始使用",
+      "ctaChart": "查看实时图表"
+    },
+    "Features": {
+      "title": "为什么选择 EdgeFlow?",
+      "subtitle": "我们结合了传统技术分析与现代机器学习算法",
+      "card1Title": "实时买卖信号",
+      "card1Desc": "透过我们的专利算法，在趋势形成的初期即时捕捉进场点。",
+      "card2Title": "风险控管系统",
+      "card2Desc": "内建动态止损与获利目标建议，保护您的资金免受剧烈波动影响。",
+      "card3Title": "多市场支援",
+      "card3Desc": "完美支援 外汇、加密货币、指数与大宗商品 CFDs 交易。"
+    },
+    "Pricing": {
+      "title": "简单透明的订阅方案",
+      "subtitle": "选择最适合您的交易工具组合",
+      "monthly": "月缴方案",
+      "quarterly": "季缴方案",
+      "yearly": "年缴方案",
+      "feature1": "全套指标存取权",
+      "feature2": "实时 Discord 警示",
+      "feature3": "社群支援",
+      "feature4": "基础教学影片",
+      "subscribe": "立即订阅"
+    }
+  },
+  "Dashboard": {
+    "welcome": "早安，{name}",
+    "welcomeDefault": "交易者",
+    "statusPrefix": "欢迎回到您的 EdgeFlow 仪表板，您目前的会员状态：",
+    "plan": {
+      "monthly": "月缴方案",
+      "quarterly": "季缴方案",
+      "yearly": "年缴方案",
+      "free": "免费试用版"
+    },
+    "activeIndicators": {
+      "title": "活跃指标",
+      "alert": {
+        "title": "尚未设定 TradingView 帐号",
+        "description": "为了让您能顺利使用指标，请务必输入您的 TradingView 使用者名称，我们将于 24 小时内完成授权。"
+      },
+      "trend": {
+        "title": "EdgeFlow Trend V2.0",
+        "description": "趋势跟踪与反转讯号核心指标"
+      },
+      "volatility": {
+        "title": "Volatility Master",
+        "description": "动态波动率过滤系统"
+      },
+      "enabled": "已启用",
+      "instruction": {
+        "title": "如何使用指标？",
+        "text": "请前往 TradingView 图表页面，点击上方“指标”按钮，在“邀请专用脚本”中即可找到上述指标。",
+        "accountNote": "(请确保您的 TradingView 帐号 <account>{account}</account> 已与我们绑定)"
+      },
+      "empty": {
+        "title": "尚未订阅任何指标",
+        "description": "订阅后即可解锁 TradingView 专属指标脚本",
+        "button": "浏览订阅方案"
+      }
+    },
+    "account": {
+      "title": "帐户管理",
+      "email": "电子邮件",
+      "tier": "会员等级",
+      "proTier": "Pro Tier",
+      "freeTier": "Free Tier",
+      "tradingViewAccount": "TradingView 帐号",
+      "notSet": "未设定",
+      "nextBilling": "下次扣款日",
+      "manageSubscription": "管理订阅 / 取消",
+      "upgrade": "升级会员"
+    },
+    "dialog": {
+      "trigger": {
+        "edit": "修改 TradingView 帐号",
+        "set": "设定 TradingView 帐号"
+      },
+      "title": "TradingView 帐号设定",
+      "description": "请输入您的 TradingView 使用者名称，我们将授权指标权限给此帐号。",
+      "label": "使用者名称",
+      "placeholder": "例如: Trading_Master_88",
+      "save": "储存设定",
+      "error": "更新失败，请稍后再试"
+    }
+  },
+  "Footer": {
+    "description": "专为交易者打造的次世代技术指标平台。提升您的交易策略，掌握市场先机。",
+    "platform": {
+      "title": "平台功能",
+      "premiumIndicators": "Premium 指标",
+      "automatedAlerts": "自动化警示",
+      "backtesting": "回测系统"
+    },
+    "resources": {
+      "title": "资源",
+      "tutorials": "使用教学",
+      "blog": "交易部落格",
+      "discord": "社群 Discord"
+    },
+    "legal": {
+      "title": "法律声明",
+      "terms": "服务条款",
+      "privacy": "隐私权政策",
+      "disclaimer": "免责声明"
+    },
+    "copyright": "© {year} EdgeFlow Inc. All rights reserved."
+  }
+}

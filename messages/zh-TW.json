@@ -1,0 +1,130 @@
+{
+  "Navbar": {
+    "features": "功能特色",
+    "pricing": "訂閱方案",
+    "dashboard": "儀表板",
+    "login": "登入",
+    "freeTrial": "免費試用",
+    "discord": "加入 Discord"
+  },
+  "LocaleSwitcher": {
+    "label": "切換語言",
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "zh-CN": "简体中文"
+  },
+  "Home": {
+    "Hero": {
+      "badge": "V2.0 演算法核心現已上線",
+      "title": "掌握市場波動，\n<gradient>精準交易每一刻</gradient>",
+      "description": "EdgeFlow 提供專業級的 CFD 技術指標與 AI 輔助訊號，幫助您在充滿不確定性的市場中找到獲利機會。",
+      "ctaStart": "立即開始使用",
+      "ctaChart": "查看即時圖表"
+    },
+    "Features": {
+      "title": "為什麼選擇 EdgeFlow?",
+      "subtitle": "我們結合了傳統技術分析與現代機器學習算法",
+      "card1Title": "即時買賣訊號",
+      "card1Desc": "透過我們的專利算法，在趨勢形成的初期即時捕捉進場點。",
+      "card2Title": "風險控管系統",
+      "card2Desc": "內建動態止損與獲利目標建議，保護您的資金免受劇烈波動影響。",
+      "card3Title": "多市場支援",
+      "card3Desc": "完美支援 外匯、加密貨幣、指數與大宗商品 CFDs 交易。"
+    },
+    "Pricing": {
+      "title": "簡單透明的訂閱方案",
+      "subtitle": "選擇最適合您的交易工具組合",
+      "monthly": "月繳方案",
+      "quarterly": "季繳方案",
+      "yearly": "年繳方案",
+      "feature1": "全套指標存取權",
+      "feature2": "即時 Discord 警示",
+      "feature3": "社群支援",
+      "feature4": "基礎教學影片",
+      "subscribe": "立即訂閱"
+    }
+  },
+  "Dashboard": {
+    "welcome": "早安，{name}",
+    "welcomeDefault": "交易者",
+    "statusPrefix": "歡迎回到您的 EdgeFlow 儀表板，您目前的會員狀態：",
+    "plan": {
+      "monthly": "月繳方案",
+      "quarterly": "季繳方案",
+      "yearly": "年繳方案",
+      "free": "免費試用版"
+    },
+    "activeIndicators": {
+      "title": "活躍指標",
+      "alert": {
+        "title": "尚未設定 TradingView 帳號",
+        "description": "為了讓您能順利使用指標，請務必輸入您的 TradingView 使用者名稱，我們將在 24 小時內完成授權。"
+      },
+      "trend": {
+        "title": "EdgeFlow Trend V2.0",
+        "description": "趨勢跟蹤與反轉訊號核心指標"
+      },
+      "volatility": {
+        "title": "Volatility Master",
+        "description": "動態波動率過濾系統"
+      },
+      "enabled": "已啟用",
+      "instruction": {
+        "title": "如何使用指標？",
+        "text": "請前往 TradingView 圖表頁面，點擊上方「指標」按鈕，在「邀請專用腳本」中即可找到上述指標。",
+        "accountNote": "(請確保您的 TradingView 帳號 <account>{account}</account> 已與我們綁定)"
+      },
+      "empty": {
+        "title": "尚未訂閱任何指標",
+        "description": "訂閱後即可解鎖 TradingView 專屬指標腳本",
+        "button": "瀏覽訂閱方案"
+      }
+    },
+    "account": {
+      "title": "帳戶管理",
+      "email": "電子郵件",
+      "tier": "會員等級",
+      "proTier": "Pro Tier",
+      "freeTier": "Free Tier",
+      "tradingViewAccount": "TradingView 帳號",
+      "notSet": "未設定",
+      "nextBilling": "下次扣款日",
+      "manageSubscription": "管理訂閱 / 取消",
+      "upgrade": "升級會員"
+    },
+    "dialog": {
+      "trigger": {
+        "edit": "修改 TradingView 帳號",
+        "set": "設定 TradingView 帳號"
+      },
+      "title": "TradingView 帳號設定",
+      "description": "請輸入您的 TradingView 使用者名稱，我們將授權指標權限給此帳號。",
+      "label": "使用者名稱",
+      "placeholder": "例如: Trading_Master_88",
+      "save": "儲存設定",
+      "error": "更新失敗，請稍後再試"
+    }
+  },
+  "Footer": {
+    "description": "專為交易者打造的次世代技術指標平台。提升您的交易策略，掌握市場先機。",
+    "platform": {
+      "title": "平台功能",
+      "premiumIndicators": "Premium 指標",
+      "automatedAlerts": "自動化警示",
+      "backtesting": "回測系統"
+    },
+    "resources": {
+      "title": "資源",
+      "tutorials": "使用教學",
+      "blog": "交易部落格",
+      "discord": "社群 Discord"
+    },
+    "legal": {
+      "title": "法律聲明",
+      "terms": "服務條款",
+      "privacy": "隱私權政策",
+      "disclaimer": "免責聲明"
+    },
+    "copyright": "© {year} EdgeFlow Inc. All rights reserved."
+  }
+}

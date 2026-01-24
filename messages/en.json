@@ -1,0 +1,130 @@
+{
+  "Navbar": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "freeTrial": "Free Trial",
+    "discord": "Join Discord"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "zh-CN": "简体中文"
+  },
+  "Home": {
+    "Hero": {
+      "badge": "V2.0 Algorithm Core Live Now",
+      "title": "Master Market Volatility,\n<gradient>Trade With Precision</gradient>",
+      "description": "EdgeFlow provides professional-grade CFD technical indicators and AI-assisted signals to help you find profitable opportunities in uncertain markets.",
+      "ctaStart": "Get Started Now",
+      "ctaChart": "View Live Charts"
+    },
+    "Features": {
+      "title": "Why Choose EdgeFlow?",
+      "subtitle": "We combine traditional technical analysis with modern machine learning algorithms",
+      "card1Title": "Real-time Signals",
+      "card1Desc": "Capture entry points early in trend formation with our proprietary algorithms.",
+      "card2Title": "Risk Management",
+      "card2Desc": "Built-in dynamic stop-loss and take-profit suggestions to protect your capital from volatility.",
+      "card3Title": "Multi-Market Support",
+      "card3Desc": "Perfect support for Forex, Crypto, Indices, and Commodities CFD trading."
+    },
+    "Pricing": {
+      "title": "Simple Transparent Pricing",
+      "subtitle": "Choose the best toolset for your trading style",
+      "monthly": "Monthly",
+      "quarterly": "Quarterly",
+      "yearly": "Yearly",
+      "feature1": "Full Indicator Access",
+      "feature2": "Real-time Discord Alerts",
+      "feature3": "Community Support",
+      "feature4": "Basic Tutorials",
+      "subscribe": "Subscribe Now"
+    }
+  },
+  "Dashboard": {
+    "welcome": "Good morning, {name}",
+    "welcomeDefault": "Trader",
+    "statusPrefix": "Welcome back to your EdgeFlow dashboard, current status:",
+    "plan": {
+      "monthly": "Monthly Plan",
+      "quarterly": "Quarterly Plan",
+      "yearly": "Yearly Plan",
+      "free": "Free Trial"
+    },
+    "activeIndicators": {
+      "title": "Active Indicators",
+      "alert": {
+        "title": "TradingView Account Not Set",
+        "description": "To use the indicators, please enter your TradingView username. We will authorize it within 24 hours."
+      },
+      "trend": {
+        "title": "EdgeFlow Trend V2.0",
+        "description": "Trend Following & Reversal Core Indicator"
+      },
+      "volatility": {
+        "title": "Volatility Master",
+        "description": "Dynamic Volatility Filtering System"
+      },
+      "enabled": "Active",
+      "instruction": {
+        "title": "How to use indicators?",
+        "text": "Go to TradingView chart, click 'Indicators' at the top, and find the above indicators in 'Invite-only scripts'.",
+        "accountNote": "(Please ensure your TradingView account <account>{account}</account> is linked)"
+      },
+      "empty": {
+        "title": "No Active Subscriptions",
+        "description": "Subscribe to unlock exclusive TradingView indicator scripts",
+        "button": "View Plans"
+      }
+    },
+    "account": {
+      "title": "Account Management",
+      "email": "Email",
+      "tier": "Membership Tier",
+      "proTier": "Pro Tier",
+      "freeTier": "Free Tier",
+      "tradingViewAccount": "TradingView Account",
+      "notSet": "Not Set",
+      "nextBilling": "Next Billing Date",
+      "manageSubscription": "Manage / Cancel",
+      "upgrade": "Upgrade"
+    },
+    "dialog": {
+      "trigger": {
+        "edit": "Edit TradingView Account",
+        "set": "Set TradingView Account"
+      },
+      "title": "TradingView Account Setup",
+      "description": "Please enter your TradingView username. We will grant indicator access to this account.",
+      "label": "Username",
+      "placeholder": "e.g., Trading_Master_88",
+      "save": "Save Settings",
+      "error": "Update failed, please try again later"
+    }
+  },
+  "Footer": {
+    "description": "Next-gen technical indicator platform built for traders. Elevate your strategy, master the market.",
+    "platform": {
+      "title": "Platform",
+      "premiumIndicators": "Premium Indicators",
+      "automatedAlerts": "Automated Alerts",
+      "backtesting": "Backtesting System"
+    },
+    "resources": {
+      "title": "Resources",
+      "tutorials": "Tutorials",
+      "blog": "Trading Blog",
+      "discord": "Community Discord"
+    },
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "disclaimer": "Disclaimer"
+    },
+    "copyright": "© {year} EdgeFlow Inc. All rights reserved."
+  }
+}
