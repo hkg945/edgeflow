@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { getTranslations } from "next-intl/server"
-import { blogPosts } from "@/data/blog-posts"
+import { getPostBySlug } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import { Calendar, User, ArrowLeft, Tag } from "lucide-react"
 import { Link } from "@/i18n/routing"
@@ -11,7 +11,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
   const { locale, slug } = await params
   const t = await getTranslations("Blog")
   
-  const post = blogPosts.find(p => p.slug === slug)
+  const post = getPostBySlug(slug)
   
   if (!post) {
     notFound()

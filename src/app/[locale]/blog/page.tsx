@@ -1,13 +1,14 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { getTranslations } from "next-intl/server"
-import { blogPosts } from "@/data/blog-posts"
+import { getPosts } from "@/lib/blog"
 import { Link } from "@/i18n/routing"
 import { Calendar, User, ArrowRight } from "lucide-react"
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const t = await getTranslations("Blog")
+  const blogPosts = getPosts()
 
   // Helper to get content by locale
   const getLocalizedContent = (contentObj: any) => {

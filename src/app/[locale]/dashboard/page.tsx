@@ -130,50 +130,72 @@ export default async function DashboardPage() {
             </div>
           </div>
 
-          {/* Account & Billing */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 h-fit">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-lg bg-purple-500/10">
-                <CreditCard className="w-5 h-5 text-purple-500" />
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Account & Billing */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-6 h-fit">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 rounded-lg bg-purple-500/10">
+                  <CreditCard className="w-5 h-5 text-purple-500" />
+                </div>
+                <h2 className="text-xl font-bold text-white">{t("account.title")}</h2>
               </div>
-              <h2 className="text-xl font-bold text-white">{t("account.title")}</h2>
-            </div>
 
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-3 border-b border-white/5">
-                <span className="text-sm text-muted-foreground">{t("account.email")}</span>
-                <span className="text-sm text-white truncate max-w-[150px]">
-                  {user.emailAddresses[0]?.emailAddress}
-                </span>
-              </div>
-              <div className="flex justify-between items-center py-3 border-b border-white/5">
-                <span className="text-sm text-muted-foreground">{t("account.tier")}</span>
-                <span className={`text-sm font-medium ${isPro ? "text-blue-400" : "text-muted-foreground"}`}>
-                  {isPro ? t("account.proTier") : t("account.freeTier")}
-                </span>
-              </div>
-              
-              <div className="py-3 border-b border-white/5">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm text-muted-foreground">{t("account.tradingViewAccount")}</span>
-                  <span className={`text-sm ${tradingViewUsername ? "text-white" : "text-yellow-500"}`}>
-                    {tradingViewUsername || t("account.notSet")}
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 border-b border-white/5">
+                  <span className="text-sm text-muted-foreground">{t("account.email")}</span>
+                  <span className="text-sm text-white truncate max-w-[150px]">
+                    {user.emailAddresses[0]?.emailAddress}
                   </span>
                 </div>
-                <TradingViewAccountDialog initialUsername={tradingViewUsername} />
-              </div>
+                <div className="flex justify-between items-center py-3 border-b border-white/5">
+                  <span className="text-sm text-muted-foreground">{t("account.tier")}</span>
+                  <span className={`text-sm font-medium ${isPro ? "text-blue-400" : "text-muted-foreground"}`}>
+                    {isPro ? t("account.proTier") : t("account.freeTier")}
+                  </span>
+                </div>
+                
+                <div className="py-3 border-b border-white/5">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm text-muted-foreground">{t("account.tradingViewAccount")}</span>
+                    <span className={`text-sm ${tradingViewUsername ? "text-white" : "text-yellow-500"}`}>
+                      {tradingViewUsername || t("account.notSet")}
+                    </span>
+                  </div>
+                  <TradingViewAccountDialog initialUsername={tradingViewUsername} />
+                </div>
 
-              {isPro && (
-                 <div className="flex justify-between items-center py-3 border-b border-white/5">
-                   <span className="text-sm text-muted-foreground">{t("account.nextBilling")}</span>
-                   <span className="text-sm text-white">2026-02-24</span>
-                 </div>
-              )}
-              <Button variant="outline" className="w-full mt-2">
-                {isPro ? t("account.manageSubscription") : t("account.upgrade")}
-              </Button>
+                {isPro && (
+                   <div className="flex justify-between items-center py-3 border-b border-white/5">
+                     <span className="text-sm text-muted-foreground">{t("account.nextBilling")}</span>
+                     <span className="text-sm text-white">2026-02-24</span>
+                   </div>
+                )}
+                <Button variant="outline" className="w-full mt-2">
+                  {isPro ? t("account.manageSubscription") : t("account.upgrade")}
+                </Button>
+              </div>
+            </div>
+
+            {/* Admin Tools - Blog Management */}
+            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-6 h-fit">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-lg bg-blue-500/20">
+                  <LayoutDashboard className="w-5 h-5 text-blue-400" />
+                </div>
+                <h2 className="text-xl font-bold text-white">Admin Tools</h2>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4">
+                Manage your blog posts and content.
+              </p>
+              <Link href="/dashboard/blog">
+                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                  Manage Blog
+                </Button>
+              </Link>
             </div>
           </div>
+
         </div>
       </main>
 
