@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Loader2, Save, ArrowLeft } from "lucide-react"
 import { BlogPost } from "@/lib/blog"
 import Link from "next/link"
+import { MarkdownEditor } from "./MarkdownEditor"
 
 interface BlogPostFormProps {
   initialData?: BlogPost
@@ -129,10 +130,9 @@ export function BlogPostForm({ initialData, isEditing = false }: BlogPostFormPro
 
                 <div className="space-y-2">
                   <Label>Content ({lang}) - Markdown Supported</Label>
-                  <Textarea 
+                  <MarkdownEditor 
                     value={formData.content[lang as keyof typeof formData.content]} 
-                    onChange={(e) => handleLocalizedChange('content', lang, e.target.value)}
-                    className="bg-white/5 border-white/10 min-h-[400px] font-mono text-sm"
+                    onChange={(value) => handleLocalizedChange('content', lang, value)}
                     placeholder="# Your content here..."
                   />
                 </div>
