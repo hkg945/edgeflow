@@ -25,6 +25,7 @@ export async function POST(request: Request) {
       title: body.title,
       excerpt: body.excerpt,
       content: body.content,
+      seo: body.seo,
       date: body.date || new Date().toISOString().split('T')[0],
       author: body.author || 'Admin',
       tags: body.tags || []

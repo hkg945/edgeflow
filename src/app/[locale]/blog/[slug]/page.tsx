@@ -6,6 +6,46 @@ import { notFound } from "next/navigation"
 import { Calendar, User, ArrowLeft, Tag } from "lucide-react"
 import { Link } from "@/i18n/routing"
 import { Button } from "@/components/ui/button"
+import { Metadata } from "next"
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string, slug: string }> }
+): Promise<Metadata> {
+  const { locale, slug } = await params
+  const post = getPostBySlug(slug)
+  
+  if (!post) {
+    return {}
+  }
+
+  type LangKey = 'en' | 'zh-TW' | 'zh-CN'
+  const currentLang = (['en', 'zh-TW', 'zh-CN'].includes(locale) ? locale : 'en') as LangKey
+  
+  const title = post.seo?.title?.[currentLang] || post.title[currentLang]
+  const description = post.seo?.description?.[currentLang] || post.excerpt[currentLang]
+  const keywords = post.seo?.keywords?.[currentLang]
+
+  return {
+    title,
+    description,
+    keywords: keywords ? keywords.split(',').map(k => k.trim()) : undefined,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+      images: post.image ? [post.image] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: post.image ? [post.image] : [],
+    }
+  }
+}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: string, slug: string }> }) {
   const { locale, slug } = await params

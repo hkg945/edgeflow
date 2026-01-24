@@ -26,6 +26,11 @@ export function BlogPostForm({ initialData, isEditing = false }: BlogPostFormPro
     title: { en: '', 'zh-TW': '', 'zh-CN': '' },
     excerpt: { en: '', 'zh-TW': '', 'zh-CN': '' },
     content: { en: '', 'zh-TW': '', 'zh-CN': '' },
+    seo: {
+      title: { en: '', 'zh-TW': '', 'zh-CN': '' },
+      description: { en: '', 'zh-TW': '', 'zh-CN': '' },
+      keywords: { en: '', 'zh-TW': '', 'zh-CN': '' },
+    },
     date: new Date().toISOString().split('T')[0],
     author: 'Admin',
     tags: []
@@ -45,6 +50,26 @@ export function BlogPostForm({ initialData, isEditing = false }: BlogPostFormPro
         [lang]: value
       }
     }))
+  }
+
+  const handleSeoChange = (field: 'title' | 'description' | 'keywords', lang: string, value: string) => {
+    setFormData(prev => {
+      const currentSeo = prev.seo || {
+        title: { en: '', 'zh-TW': '', 'zh-CN': '' },
+        description: { en: '', 'zh-TW': '', 'zh-CN': '' },
+        keywords: { en: '', 'zh-TW': '', 'zh-CN': '' },
+      }
+      return {
+        ...prev,
+        seo: {
+          ...currentSeo,
+          [field]: {
+            ...currentSeo[field],
+            [lang]: value
+          }
+        }
+      }
+    })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -135,6 +160,52 @@ export function BlogPostForm({ initialData, isEditing = false }: BlogPostFormPro
                     onChange={(value) => handleLocalizedChange('content', lang, value)}
                     placeholder="# Your content here..."
                   />
+                </div>
+
+                <div className="pt-6 border-t border-white/10 mt-6">
+                  <h3 className="text-lg font-medium mb-4">SEO Settings</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <Label>Meta Title</Label>
+                        <span className="text-xs text-muted-foreground">
+                          {formData.seo?.title?.[lang as keyof typeof formData.title]?.length || 0} / 60
+                        </span>
+                      </div>
+                      <Input 
+                        value={formData.seo?.title?.[lang as keyof typeof formData.title] || ''}
+                        onChange={(e) => handleSeoChange('title', lang, e.target.value)}
+                        className="bg-white/5 border-white/10"
+                        placeholder="SEO Title (defaults to post title if empty)"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <Label>Meta Description</Label>
+                        <span className="text-xs text-muted-foreground">
+                          {formData.seo?.description?.[lang as keyof typeof formData.title]?.length || 0} / 160
+                        </span>
+                      </div>
+                      <Textarea 
+                        value={formData.seo?.description?.[lang as keyof typeof formData.title] || ''}
+                        onChange={(e) => handleSeoChange('description', lang, e.target.value)}
+                        className="bg-white/5 border-white/10 h-20"
+                        placeholder="SEO Description (defaults to excerpt if empty)"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Keywords</Label>
+                      <Input 
+                        value={formData.seo?.keywords?.[lang as keyof typeof formData.title] || ''}
+                        onChange={(e) => handleSeoChange('keywords', lang, e.target.value)}
+                        className="bg-white/5 border-white/10"
+                        placeholder="keyword1, keyword2, keyword3"
+                      />
+                    </div>
+                  </div>
                 </div>
               </TabsContent>
             ))}

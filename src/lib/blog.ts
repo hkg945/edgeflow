@@ -21,6 +21,23 @@ export interface BlogPost {
     'zh-TW': string
     'zh-CN': string
   }
+  seo?: {
+    title: {
+      en: string
+      'zh-TW': string
+      'zh-CN': string
+    }
+    description: {
+      en: string
+      'zh-TW': string
+      'zh-CN': string
+    }
+    keywords: {
+      en: string
+      'zh-TW': string
+      'zh-CN': string
+    }
+  }
   date: string
   author: string
   image?: string
