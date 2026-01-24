@@ -40,7 +40,7 @@ export function Pricing() {
           {tHome("swipeHint")}
         </div>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 gap-4 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0 max-w-6xl mx-auto">
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 gap-4 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:mx-auto md:px-0 max-w-6xl">
           <motion.div
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
