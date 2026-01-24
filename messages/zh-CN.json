@@ -122,6 +122,7 @@
     "viewDetails": "查看详情",
     "hideDetails": "隐藏详情",
     "learnMore": "了解完整策略",
+    "swipeHint": "滑动查看更多",
     "sectionHeaders": {
       "livePreview": "即时预览",
       "stats": {
@@ -141,6 +142,7 @@
     "zh-CN": "简体中文"
   },
   "Home": {
+    "swipeHint": "滑动查看更多",
     "Hero": {
       "badge": "V2.0 算法核心现已上线",
       "title": "掌握市场波动，\n<gradient>精准交易每一刻</gradient>",

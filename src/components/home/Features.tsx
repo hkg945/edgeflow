@@ -1,11 +1,12 @@
 "use client"
 
-import { BarChart2, Zap, Shield } from "lucide-react"
+import { BarChart2, Zap, Shield, ArrowRight } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
 
 export function Features() {
   const t = useTranslations("Home.Features")
+  const tHome = useTranslations("Home")
 
   const features = [
     {
@@ -51,9 +52,16 @@ export function Features() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="md:hidden flex items-center gap-2 text-sm text-muted-foreground mb-4 animate-pulse px-1">
+          <ArrowRight className="w-4 h-4" />
+          {tHome("swipeHint")}
+        </div>
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 gap-4 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0">
           {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
+            <div key={index} className="min-w-[85vw] md:min-w-0 snap-center h-full">
+              <FeatureCard {...feature} />
+            </div>
           ))}
         </div>
       </div>

@@ -27,15 +27,22 @@ export function IndicatorsList({ indicators }: IndicatorsListProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {indicators.map((indicator) => {
-        const isExpanded = expandedId === indicator.id
-        
-        return (
-          <div 
-            key={indicator.id}
-            className={`group relative p-8 rounded-2xl border ${indicator.borderColor} bg-gradient-to-b ${indicator.color} backdrop-blur-sm transition-all duration-300 flex flex-col`}
-          >
+    <div className="space-y-4">
+      {/* Mobile Swipe Hint */}
+      <div className="md:hidden flex items-center gap-2 text-sm text-muted-foreground animate-pulse px-1">
+        <ArrowRight className="w-4 h-4" />
+        {t("swipeHint")}
+      </div>
+
+      <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 gap-4 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0">
+        {indicators.map((indicator) => {
+          const isExpanded = expandedId === indicator.id
+          
+          return (
+            <div 
+              key={indicator.id}
+              className={`min-w-[85vw] md:min-w-0 snap-center group relative p-8 rounded-2xl border ${indicator.borderColor} bg-gradient-to-b ${indicator.color} backdrop-blur-sm transition-all duration-300 flex flex-col`}
+            >
             <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
             
             <div className="flex-1">
@@ -112,6 +119,7 @@ export function IndicatorsList({ indicators }: IndicatorsListProps) {
           </div>
         )
       })}
+      </div>
     </div>
   )
 }

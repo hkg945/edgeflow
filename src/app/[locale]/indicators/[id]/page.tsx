@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { getTranslations } from "next-intl/server"
-import { BarChart2, Activity, Layers, ArrowLeft, CheckCircle2, HelpCircle } from "lucide-react"
+import { BarChart2, Activity, Layers, ArrowLeft, CheckCircle2, HelpCircle, ArrowRight } from "lucide-react"
 import { Link } from "@/i18n/routing"
 import { Button } from "@/components/ui/button"
 import { IndicatorChart } from "@/components/indicators/IndicatorChart"
@@ -74,20 +74,25 @@ export default async function IndicatorDetailPage({ params }: { params: Promise<
               <h2 className="text-3xl font-bold text-white text-center">{t("sectionHeaders.livePreview")}</h2>
               <IndicatorChart type={id as "trend" | "oscillator" | "volume"} />
               
-              <div className="grid grid-cols-3 gap-4 md:gap-8">
-                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <div className="md:hidden flex items-center gap-2 text-sm text-muted-foreground mb-4 animate-pulse px-1">
+                <ArrowRight className="w-4 h-4" />
+                {t("swipeHint")}
+              </div>
+
+              <div className="flex overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 gap-4 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0">
+                <div className="min-w-[40vw] md:min-w-0 snap-center p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
                   <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                     {t(`${id}.fullDescription.stats.winRate`)}
                   </div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wider">{t("sectionHeaders.stats.winRate")}</div>
                 </div>
-                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                <div className="min-w-[40vw] md:min-w-0 snap-center p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
                   <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
                     {t(`${id}.fullDescription.stats.profitFactor`)}
                   </div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wider">{t("sectionHeaders.stats.profitFactor")}</div>
                 </div>
-                <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                <div className="min-w-[40vw] md:min-w-0 snap-center p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
                   <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
                     {t(`${id}.fullDescription.stats.trades`)}
                   </div>
@@ -109,9 +114,15 @@ export default async function IndicatorDetailPage({ params }: { params: Promise<
             {/* Key Benefits */}
             <section className="space-y-6">
               <h2 className="text-3xl font-bold text-white">{t("sectionHeaders.keyBenefits")}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              
+              <div className="md:hidden flex items-center gap-2 text-sm text-muted-foreground mb-4 animate-pulse px-1">
+                <ArrowRight className="w-4 h-4" />
+                {t("swipeHint")}
+              </div>
+
+              <div className="flex overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 gap-4 md:grid md:grid-cols-2 md:pb-0 md:mx-0 md:px-0">
                 {[0, 1, 2, 3].map((index) => (
-                  <div key={index} className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div key={index} className="min-w-[85vw] md:min-w-0 snap-center flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                     <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0 mt-1" />
                     <p className="text-muted-foreground">
                       {t(`${id}.fullDescription.keyBenefits.${index}`)}
