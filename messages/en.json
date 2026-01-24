@@ -4,8 +4,135 @@
     "pricing": "Pricing",
     "dashboard": "Dashboard",
     "login": "Login",
+    "indicators": "Indicators",
     "freeTrial": "Free Trial",
     "discord": "Join Discord"
+  },
+  "Indicators": {
+    "title": "Explore Our Indicators",
+    "subtitle": "Professional-grade tools designed for clarity and precision",
+    "trend": {
+      "title": "EdgeFlow Trend",
+      "description": "Our flagship trend-following system that identifies major market moves while filtering out noise. Features auto-divergence detection and multi-timeframe analysis.",
+      "details": {
+        "feature1": "Multi-timeframe Trend Confirmation",
+        "feature2": "Automatic Divergence Detection",
+        "feature3": "Dynamic Support & Resistance Levels",
+        "bestFor": "Best For: Trend Following & Swing Trading",
+        "timeframe": "Recommended Timeframes: 1H, 4H, Daily"
+      },
+      "fullDescription": {
+        "intro": "EdgeFlow Trend is a revolutionary trend-following system designed to help traders capture the most profitable moves in any market. By combining multi-timeframe analysis with advanced noise filtering algorithms, it provides clear entry and exit signals that you can trust.",
+        "howItWorks": "The indicator analyzes price action across multiple timeframes simultaneously. It uses a proprietary volatility-adjusted moving average to determine the primary trend, while secondary filters check for momentum and volume confirmation. This ensures that you only enter trades when the odds are significantly in your favor.",
+        "keyBenefits": [
+          "Eliminates guesswork with clear visual signals",
+          "Reduces false signals during choppy market conditions",
+          "Automatically identifies potential reversal points with divergence detection",
+          "Provides dynamic support and resistance levels for optimal stop-loss placement"
+        ],
+        "stats": {
+          "winRate": "78%",
+          "profitFactor": "2.4",
+          "trades": "1,240"
+        },
+        "faq": [
+          {
+            "q": "Does it repaint?",
+            "a": "No, EdgeFlow Trend is non-repainting. Once a candle closes, the signal is permanent."
+          },
+          {
+            "q": "Which timeframe is best?",
+            "a": "It works on all timeframes, but we recommend 1H and 4H for the most reliable swing trading signals."
+          }
+        ]
+      }
+    },
+    "oscillator": {
+      "title": "EdgeFlow Oscillator",
+      "description": "Advanced momentum oscillator that detects overbought/oversold conditions with smart money flow integration. Perfect for finding precise entry and exit points.",
+      "details": {
+        "feature1": "Smart Money Flow Detection",
+        "feature2": "Adaptive Overbought/Oversold Zones",
+        "feature3": "Momentum Divergence Signals",
+        "bestFor": "Best For: Reversals & Scalping",
+        "timeframe": "Recommended Timeframes: 5m, 15m, 1H"
+      },
+      "fullDescription": {
+        "intro": "EdgeFlow Oscillator goes beyond traditional RSI or Stochastic indicators by incorporating Smart Money Flow analysis. It visualizes institutional buying and selling pressure, allowing you to spot reversals before they happen on the price chart.",
+        "howItWorks": "This tool tracks the velocity of price changes relative to volume flow. When price makes a new high but money flow fails to confirm it, the oscillator signals a bearish divergence, warning of an impending reversal. Its adaptive bands adjust to current market volatility, ensuring signals remain relevant in both quiet and active markets.",
+        "keyBenefits": [
+          "Detects hidden divergences between price and momentum",
+          "Identifies high-probability reversal zones with precision",
+          "Filters out weak signals using volume confirmation",
+          "Perfect for timing entries in established trends"
+        ],
+        "stats": {
+          "winRate": "72%",
+          "profitFactor": "1.9",
+          "trades": "3,500+"
+        },
+        "faq": [
+          {
+            "q": "Can I use it for scalping?",
+            "a": "Absolutely. The 5m and 15m timeframes provide excellent signals for quick scalping trades."
+          },
+          {
+            "q": "How does it differ from RSI?",
+            "a": "Unlike RSI which only looks at price, EdgeFlow Oscillator integrates volume flow to identify true momentum vs fakeouts."
+          }
+        ]
+      }
+    },
+    "volume": {
+      "title": "EdgeFlow Volume",
+      "description": "Institutional volume analysis tool that reveals hidden accumulation and distribution patterns before price action follows.",
+      "details": {
+        "feature1": "Institutional Accumulation/Distribution",
+        "feature2": "Volume Anomaly Detection",
+        "feature3": "Real-time Buy/Sell Pressure",
+        "bestFor": "Best For: Breakouts & Volume Analysis",
+        "timeframe": "Recommended Timeframes: All Timeframes"
+      },
+      "fullDescription": {
+        "intro": "EdgeFlow Volume is the ultimate tool for understanding the 'why' behind price movements. It decodes complex volume data to reveal the footprint of institutional traders, showing you where the big money is positioning itself.",
+        "howItWorks": "Unlike standard volume bars, EdgeFlow Volume color-codes volume based on aggressive buying vs. selling pressure. It highlights volume anomalies—spikes in activity that often precede major price breakouts or breakdowns. This gives you an early warning system for significant market moves.",
+        "keyBenefits": [
+          "Visualizes institutional accumulation and distribution phases",
+          "Validates breakouts with volume confirmation",
+          "Identifies exhaustion points where trends are likely to end",
+          "Real-time delta analysis for intraday scalping"
+        ],
+        "stats": {
+          "winRate": "N/A",
+          "profitFactor": "High",
+          "trades": "Tool"
+        },
+        "faq": [
+          {
+            "q": "Do I need real-time data?",
+            "a": "Yes, accurate volume analysis requires real-time data feeds from your broker."
+          },
+          {
+            "q": "Does it show buy vs sell volume?",
+            "a": "Yes, it breaks down every candle into aggressive buying and selling volume."
+          }
+        ]
+      }
+    },
+    "viewDetails": "View Details",
+    "hideDetails": "Hide Details",
+    "learnMore": "Learn Strategy",
+    "sectionHeaders": {
+      "livePreview": "Live Preview",
+      "stats": {
+        "winRate": "Win Rate",
+        "profitFactor": "Profit Factor",
+        "trades": "Total Trades"
+      },
+      "howItWorks": "How It Works",
+      "keyBenefits": "Key Benefits",
+      "faq": "FAQ"
+    }
   },
   "LocaleSwitcher": {
     "label": "Change language",
