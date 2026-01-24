@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { getTranslations } from 'next-intl/server';
+import { LegalLinks } from "./LegalLinks";
 
 export async function Footer() {
   const t = await getTranslations('Footer');
@@ -35,11 +36,7 @@ export async function Footer() {
 
           <div>
             <h4 className="font-semibold text-white mb-4">{t('legal.title')}</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">{t('legal.terms')}</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">{t('legal.privacy')}</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">{t('legal.disclaimer')}</Link></li>
-            </ul>
+            <LegalLinks />
           </div>
         </div>
         

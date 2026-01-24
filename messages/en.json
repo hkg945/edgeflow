@@ -262,5 +262,19 @@
       "disclaimer": "Disclaimer"
     },
     "copyright": "© {year} EdgeFlow Inc. All rights reserved."
+  },
+  "LegalDocs": {
+    "terms": {
+      "title": "Terms of Service",
+      "content": "Welcome to EdgeFlow. By using our services, you agree to the following terms:\n\n1. Use of Service\nAll tools and indicators provided on this platform are for reference only. We do not guarantee profitability in trading.\n\n2. User Responsibility\nYou are solely responsible for your trading decisions and capital management.\n\n3. Subscription & Refunds\nOnce a subscription is active, charges will apply based on the selected plan. Please refer to specific instructions for our refund policy.\n\n4. Intellectual Property\nAll content, algorithms, and code on EdgeFlow are protected by copyright and may not be copied or distributed without authorization."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": "We value your privacy. Here is how we collect and use your data:\n\n1. Data Collection\nWe collect your registration information (such as email) and data generated while using the platform.\n\n2. Data Usage\nYour data is used to provide and improve our services, send notifications, and perform necessary authentication.\n\n3. Data Protection\nWe implement industry-standard security measures to protect your personal information.\n\n4. Third-Party Sharing\nWe do not share your personal data with third parties unless required by law or to provide services (e.g., payment processing)."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "content": "High Risk Investment Warning:\n\nCFDs and Forex trading carry high risks and may not be suitable for all investors. You may lose some or all of your invested capital.\n\n1. Not Investment Advice\nAll signals, indicators, and analysis provided by EdgeFlow are for educational and informational purposes only and do not constitute investment advice.\n\n2. Performance Disclaimer\nPast performance is not indicative of future results. Simulated trading results may differ from actual trading results.\n\n3. Limitation of Liability\nEdgeFlow is not responsible for any losses or damages resulting from the use of information on this platform."
+    }
   }
 }
