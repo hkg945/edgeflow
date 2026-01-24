@@ -28,6 +28,7 @@ interface MarkdownEditorProps {
 
 export function MarkdownEditor({ value, onChange, className, placeholder }: MarkdownEditorProps) {
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
+  const fileInputRef = React.useRef<HTMLInputElement>(null)
 
   const insertText = (before: string, after: string = "") => {
     const textarea = textareaRef.current
@@ -57,9 +58,34 @@ export function MarkdownEditor({ value, onChange, className, placeholder }: Mark
   }
 
   const handleImage = () => {
-    const url = prompt("Enter Image URL:")
-    if (url) {
-      insertText("![Alt text](", `${url})`)
+    fileInputRef.current?.click()
+  }
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    const formData = new FormData()
+    formData.append('file', file)
+
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!res.ok) throw new Error('Upload failed')
+
+      const { url } = await res.json()
+      insertText(`![${file.name}](${url})`)
+    } catch (error) {
+      console.error(error)
+      alert('Failed to upload image')
+    } finally {
+      // Reset input
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ''
+      }
     }
   }
 
@@ -204,6 +230,13 @@ export function MarkdownEditor({ value, onChange, className, placeholder }: Mark
         onChange={(e) => onChange(e.target.value)}
         className="min-h-[400px] border-0 rounded-none rounded-b-md focus-visible:ring-0 resize-y font-mono"
         placeholder={placeholder}
+      />
+      <input
+        type="file"
+        ref={fileInputRef}
+        className="hidden"
+        accept="image/*"
+        onChange={handleFileUpload}
       />
     </div>
   )
