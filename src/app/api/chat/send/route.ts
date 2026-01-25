@@ -4,7 +4,7 @@ import { addMessage } from '@/lib/chat'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { sessionId, content, userName } = body
+    const { sessionId, content, userName, userCreatedAt, userPlan } = body
 
     if (!sessionId || !content) {
       return NextResponse.json(
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const conversation = addMessage(sessionId, content, 'user', userName)
+    const conversation = addMessage(sessionId, content, 'user', userName, userCreatedAt, userPlan)
 
     return NextResponse.json(conversation)
   } catch (error) {

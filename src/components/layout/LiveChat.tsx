@@ -102,14 +102,21 @@ export function LiveChat() {
     // Here we just send it.
 
     try {
+        const payload: any = { 
+            sessionId, 
+            content 
+        }
+      
+        if (user) {
+            payload.userName = user.fullName || user.firstName || user.username
+            payload.userCreatedAt = user.createdAt ? new Date(user.createdAt).getTime() : undefined
+            payload.userPlan = user.publicMetadata?.plan as string || 'free'
+        }
+
         await fetch('/api/chat/send', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                sessionId, 
-                content,
-                userName: user ? (user.fullName || user.firstName || user.username) : undefined
-            })
+            body: JSON.stringify(payload)
         })
     } catch (e) {
         console.error("Send error", e)

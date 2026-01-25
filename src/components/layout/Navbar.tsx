@@ -8,6 +8,7 @@ import { useState } from "react"
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
 import { useTranslations } from "next-intl"
 import { LanguageSwitcher } from "./LanguageSwitcher"
+import Image from "next/image"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,8 +18,14 @@ export function Navbar() {
     <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-          EdgeFlow<span className="text-blue-500">.</span>
+        <Link href="/" className="relative h-8 w-40 block overflow-hidden">
+          <Image 
+            src="/EdgeFlow_Logo-removebg-preview.png" 
+            alt="EdgeFlow" 
+            fill
+            className="object-cover"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

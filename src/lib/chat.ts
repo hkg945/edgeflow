@@ -61,7 +61,7 @@ export function saveConversation(conversation: Conversation): void {
   fs.writeFileSync(chatsFile, JSON.stringify(conversations, null, 2), 'utf8')
 }
 
-export function addMessage(conversationId: string, content: string, role: 'user' | 'admin', userName?: string): Conversation {
+export function addMessage(conversationId: string, content: string, role: 'user' | 'admin', userName?: string, userCreatedAt?: number, userPlan?: string): Conversation {
   let conversation = getConversation(conversationId)
   const now = Date.now()
   
@@ -73,6 +73,8 @@ export function addMessage(conversationId: string, content: string, role: 'user'
     conversation = {
       id: conversationId,
       userName: userName || 'Guest ' + conversationId.slice(0, 4),
+      userCreatedAt,
+      userPlan,
       messages: [],
       lastMessageAt: now,
       unreadCount: 0,
@@ -81,6 +83,9 @@ export function addMessage(conversationId: string, content: string, role: 'user'
   } else if (userName) {
     // Always update user name if provided (handles Guest -> User or name changes)
     conversation.userName = userName
+    // Also update metadata if provided
+    if (userCreatedAt) conversation.userCreatedAt = userCreatedAt
+    if (userPlan) conversation.userPlan = userPlan
   }
 
   const newMessage: Message = {

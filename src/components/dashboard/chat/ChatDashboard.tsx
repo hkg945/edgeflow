@@ -184,11 +184,26 @@ export function ChatDashboard() {
                                 <User className="w-5 h-5 text-white" />
                             </div>
                             <div>
-                                <h3 className="font-medium text-white">{selectedConversation?.userName}</h3>
-                                <p className="text-xs text-green-400 flex items-center gap-1">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
-                                    Active
-                                </p>
+                                <div className="flex items-center gap-2">
+                                    <h3 className="font-medium text-white">{selectedConversation?.userName}</h3>
+                                    {selectedConversation?.userPlan && selectedConversation.userPlan !== 'free' && (
+                                        <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/30">
+                                            PRO
+                                        </span>
+                                    )}
+                                </div>
+                                <div className="flex items-center gap-3 text-xs text-muted-foreground mt-0.5">
+                                    <p className="flex items-center gap-1 text-green-400">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                                        Active
+                                    </p>
+                                    {selectedConversation?.userCreatedAt && (
+                                        <>
+                                            <span className="text-gray-700">|</span>
+                                            <span>Joined {new Date(selectedConversation.userCreatedAt).toLocaleDateString()}</span>
+                                        </>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

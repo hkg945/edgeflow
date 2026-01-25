@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { getTranslations } from 'next-intl/server';
 import { LegalLinks } from "./LegalLinks";
+import Image from "next/image";
 
 export async function Footer() {
   const t = await getTranslations('Footer');
@@ -10,7 +11,14 @@ export async function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">EdgeFlow.</h3>
+            <Link href="/" className="relative block h-12 w-48 overflow-hidden">
+              <Image 
+                src="/EdgeFlow_Logo-removebg-preview.png" 
+                alt="EdgeFlow" 
+                fill
+                className="object-cover object-left"
+              />
+            </Link>
             <p className="text-sm text-muted-foreground">
               {t('description')}
             </p>

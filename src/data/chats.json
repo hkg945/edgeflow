@@ -1,5 +1,20 @@
 [
   {
+    "id": "b64fb96e-9a7f-4d92-962a-c12b858aef3e",
+    "userName": "Guest b64f",
+    "messages": [
+      {
+        "id": "ec6d5816-55cf-475f-90fe-8b57dc394b1b",
+        "role": "user",
+        "content": "Hi Test",
+        "timestamp": 1769317154572
+      }
+    ],
+    "lastMessageAt": 1769317154572,
+    "unreadCount": 0,
+    "status": "active"
+  },
+  {
     "id": "2859ea2a-2066-4121-8d21-4564e79b5c01",
     "userName": "Andy Huang",
     "messages": [
@@ -56,10 +71,18 @@
         "role": "admin",
         "content": "1",
         "timestamp": 1769268222538
+      },
+      {
+        "id": "b7fac260-c3d0-4358-a880-9315665a55a8",
+        "role": "user",
+        "content": "請問",
+        "timestamp": 1769317065281
       }
     ],
-    "lastMessageAt": 1769268222538,
+    "lastMessageAt": 1769317065281,
     "unreadCount": 0,
-    "status": "active"
+    "status": "active",
+    "userCreatedAt": 1769240829344,
+    "userPlan": "quarterly"
   }
 ]
