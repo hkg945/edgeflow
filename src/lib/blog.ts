@@ -1,8 +1,4 @@
-import fs from 'fs'
-import path from 'path'
-
-const postsDirectory = path.join(process.cwd(), 'src/data')
-const postsFile = path.join(postsDirectory, 'posts.json')
+import postsData from '@/data/posts.json'
 
 export interface BlogPost {
   slug: string
@@ -44,33 +40,20 @@ export interface BlogPost {
   tags: string[]
 }
 
-// Ensure directory exists
-if (!fs.existsSync(postsDirectory)) {
-  fs.mkdirSync(postsDirectory, { recursive: true })
-}
-
-// Ensure file exists
-if (!fs.existsSync(postsFile)) {
-  fs.writeFileSync(postsFile, '[]', 'utf8')
-}
+// Initialize in-memory store
+// Note: In a serverless/edge environment (like Cloudflare Pages), 
+// file system writing is not supported. Data will be reset on redeployment/restart.
+let posts: BlogPost[] = postsData as BlogPost[]
 
 export function getPosts(): BlogPost[] {
-  try {
-    const fileContents = fs.readFileSync(postsFile, 'utf8')
-    return JSON.parse(fileContents)
-  } catch (error) {
-    console.error('Error reading posts file:', error)
-    return []
-  }
+  return posts
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  const posts = getPosts()
   return posts.find((post) => post.slug === slug)
 }
 
 export function savePost(post: BlogPost): void {
-  const posts = getPosts()
   const existingIndex = posts.findIndex((p) => p.slug === post.slug)
   
   if (existingIndex > -1) {
@@ -79,11 +62,10 @@ export function savePost(post: BlogPost): void {
     posts.unshift(post) // Add new post to the beginning
   }
   
-  fs.writeFileSync(postsFile, JSON.stringify(posts, null, 2), 'utf8')
+  console.warn('Post saved to in-memory storage. Changes will be lost on restart.')
 }
 
 export function deletePost(slug: string): void {
-  const posts = getPosts()
-  const filteredPosts = posts.filter((p) => p.slug !== slug)
-  fs.writeFileSync(postsFile, JSON.stringify(filteredPosts, null, 2), 'utf8')
+  posts = posts.filter((p) => p.slug !== slug)
+  console.warn('Post deleted from in-memory storage. Changes will be lost on restart.')
 }

@@ -1,9 +1,5 @@
-import fs from 'fs'
-import path from 'path'
 import { v4 as uuidv4 } from 'uuid'
-
-const dataDirectory = path.join(process.cwd(), 'src/data')
-const chatsFile = path.join(dataDirectory, 'chats.json')
+import chatsData from '@/data/chats.json'
 
 export interface Message {
   id: string
@@ -15,38 +11,28 @@ export interface Message {
 export interface Conversation {
   id: string // sessionId
   userName: string
+  userCreatedAt?: number // Timestamp
+  userPlan?: string // 'free', 'monthly', 'quarterly', 'yearly'
   messages: Message[]
   lastMessageAt: number
   unreadCount: number // Number of messages unread by admin
   status: 'active' | 'closed'
 }
 
-// Ensure directory and file exist
-if (!fs.existsSync(dataDirectory)) {
-  fs.mkdirSync(dataDirectory, { recursive: true })
-}
-
-if (!fs.existsSync(chatsFile)) {
-  fs.writeFileSync(chatsFile, '[]', 'utf8')
-}
+// Initialize in-memory store
+// Note: In a serverless/edge environment (like Cloudflare Pages), 
+// file system writing is not supported. Data will be reset on redeployment/restart.
+const conversations: Conversation[] = chatsData as Conversation[]
 
 export function getConversations(): Conversation[] {
-  try {
-    const fileContents = fs.readFileSync(chatsFile, 'utf8')
-    return JSON.parse(fileContents)
-  } catch (error) {
-    console.error('Error reading chats file:', error)
-    return []
-  }
+  return conversations
 }
 
 export function getConversation(id: string): Conversation | undefined {
-  const conversations = getConversations()
   return conversations.find((c) => c.id === id)
 }
 
 export function saveConversation(conversation: Conversation): void {
-  const conversations = getConversations()
   const existingIndex = conversations.findIndex((c) => c.id === conversation.id)
   
   if (existingIndex > -1) {
@@ -58,7 +44,7 @@ export function saveConversation(conversation: Conversation): void {
   // Sort by last message time
   conversations.sort((a, b) => b.lastMessageAt - a.lastMessageAt)
   
-  fs.writeFileSync(chatsFile, JSON.stringify(conversations, null, 2), 'utf8')
+  console.warn('Conversation saved to in-memory storage. Changes will be lost on restart.')
 }
 
 export function addMessage(conversationId: string, content: string, role: 'user' | 'admin', userName?: string, userCreatedAt?: number, userPlan?: string): Conversation {
