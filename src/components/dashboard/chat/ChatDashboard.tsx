@@ -16,6 +16,8 @@ interface Message {
 interface Conversation {
   id: string
   userName: string
+  userCreatedAt?: number
+  userPlan?: string
   messages: Message[]
   lastMessageAt: number
   unreadCount: number
@@ -159,6 +161,11 @@ export function ChatDashboard() {
                             <span className={cn("font-medium text-sm truncate max-w-[120px]", c.unreadCount > 0 ? "text-white" : "text-gray-400")}>
                                 {c.userName}
                             </span>
+                            {c.userPlan && c.userPlan !== 'free' && (
+                                <span className="ml-1.5 px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[10px] font-medium border border-blue-500/30 flex-shrink-0">
+                                    PRO
+                                </span>
+                            )}
                             <span className="text-xs text-muted-foreground flex-shrink-0">{formatTime(c.lastMessageAt)}</span>
                         </div>
                         <p className="text-xs text-muted-foreground truncate">
