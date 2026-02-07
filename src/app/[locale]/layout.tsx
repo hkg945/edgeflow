@@ -1,33 +1,21 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { LiveChat } from "@/components/layout/LiveChat";
-import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EdgeFlow - 次世代 CFD 交易指標平台",
-  description: "專業級的 CFD 技術指標與 AI 輔助訊號",
+  title: "Strategify - 可視化交易策略構建與驗證平台",
+  description: "無需編碼，透過拖拉組件快速構建交易策略，並使用強大的回測系統驗證邏輯。讓量化交易變得簡單觸手可及。",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }>) {
-  // Ensure that the incoming `locale` is valid
-  const { locale } = await params;
-  
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
-
   return (
     <ClerkProvider
       appearance={{
@@ -40,13 +28,8 @@ export default async function RootLayout({
         },
       }}
     >
-      <html lang={locale} className="dark">
-        <body className={inter.className}>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-            <LiveChat />
-          </NextIntlClientProvider>
-        </body>
+      <html lang="zh-TW" className="dark">
+        <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>
   );
